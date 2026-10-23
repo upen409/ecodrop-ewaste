@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoDrop - E-Waste & Recycling Locator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <h1>🌱 EcoDrop</h1>
+            <p>Locate & Recycle E-Waste Safely | SDG 12 Project</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#about">About Problem</a>
+        <a href="#locator">Find Drop-Off Point</a>
+        <a href="#quiz">E-Waste Quiz</a>
+        <a href="#pledge">Take Pledge</a>
+    </nav>
+
+    <!-- Main Container -->
+    <main class="container">
+
+        <!-- About / Problem Statement Section -->
+        <section id="about" class="card">
+            <h2>The Problem with E-Waste</h2>
+            <p>
+                Millions of electronics and old batteries end up in standard rubbish bins every year. 
+                When electronic waste decomposes in landfills, hazardous chemicals like lead, mercury, and cadmium leak into the soil and water supply.
+            </p>
+            <div class="sdg-badge">
+                <strong>Targeting UN SDG 12:</strong> Responsible Consumption and Production
+            </div>
+        </section>
+
+        <!-- Searchable Drop-Off Locator -->
+        <section id="locator" class="card">
+            <h2>Find Nearby Recycling Collection Points</h2>
+            <input type="text" id="searchInput" onkeyup="searchCenters()" placeholder="Search by item type (e.g., Batteries, Phone, Laptop)...">
+            
+            <ul id="centerList">
+                <li class="center-item">
+                    <h3>Central City E-Waste Recycling Hub</h3>
+                    <p><strong>Accepts:</strong> Laptops, Mobile Phones, Tablets, Chargers</p>
+                    <p><strong>Address:</strong> 123 Eco Green Street, Sector 4</p>
+                </li>
+                <li class="center-item">
+                    <h3>Community Battery & Hardware Drop Box</h3>
+                    <p><strong>Accepts:</strong> AA/AAA Batteries, Lithium-ion Batteries, Power Banks</p>
+                    <p><strong>Address:</strong> Municipal Public Library, Main Entrance</p>
+                </li>
+                <li class="center-item">
+                    <h3>TechCare Appliance Disposal Depot</h3>
+                    <p><strong>Accepts:</strong> Monitors, TV Screens, Printers, Keyboards</p>
+                    <p><strong>Address:</strong> 45 Industrial Park Road, Gate 2</p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Interactive E-Waste Quiz -->
+        <section id="quiz" class="card">
+            <h2>Quick Quiz: Is it E-Waste?</h2>
+            <p>Select an item to see if it belongs in regular trash or special e-waste recycling:</p>
+            <div class="quiz-buttons">
+                <button onclick="checkItem('battery')">🔋 Old AA Battery</button>
+                <button onclick="checkItem('phone')">📱 Broken Smartphone</button>
+                <button onclick="checkItem('cardboard')">📦 Empty Shipping Box</button>
+            </div>
+            <div id="quizResult" class="result-box"></div>
+        </section>
+
+        <!-- Interactive Pledge Feature -->
+        <section id="pledge" class="card">
+            <h2>Take the Responsible Disposal Pledge</h2>
+            <p>Promise to safely dispose of your next electronic item!</p>
+            <button class="pledge-btn" onclick="addPledge()">I Pledge to Recycle E-Waste!</button>
+            <p class="pledge-count">Total Community Pledges: <span id="pledgeCount">142</span></p>
+        </section>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>Grade 9 Robotics & AI Project | Built for UN SDG 12 | Hosted on GitHub Pages</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
